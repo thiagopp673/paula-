@@ -1,4 +1,5 @@
 <!-- force update -->
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -13,21 +14,34 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-    background:#ffe6f2;
+    background:#dff3ff; /* 💙 azul suave */
     font-family:Arial, sans-serif;
     overflow:hidden;
 }
+
+/* 💙 corazones decorativos */
+.heart{
+    position:absolute;
+    font-size:28px;
+    color:#6ec6ff;
+    opacity:0.6;
+}
+
+.heart.top-left{ top:15px; left:15px; }
+.heart.top-right{ top:15px; right:15px; }
+.heart.bottom-left{ bottom:15px; left:15px; }
+.heart.bottom-right{ bottom:15px; right:15px; }
 
 .container{
     text-align:center;
 }
 
 h1{
-    color:#ff3d7f;
+    color:#1e88e5;
     font-size:2.2rem;
 }
 
-/* 🌟 BOTONES MEJORADOS */
+/* BOTONES */
 button{
     padding:14px 26px;
     margin:10px;
@@ -39,40 +53,41 @@ button{
     font-weight:600;
 }
 
-/* 💚 YES */
+/* YES */
 #yesBtn{
-    background: linear-gradient(135deg, #4CAF50, #2ecc71);
+    background: linear-gradient(135deg, #42a5f5, #1e88e5);
     color:white;
-    box-shadow: 0 6px 15px rgba(76,175,80,0.3);
+    box-shadow: 0 6px 15px rgba(30,136,229,0.3);
 }
 
-#yesBtn:hover{
-    transform: scale(1.1);
-    box-shadow: 0 10px 20px rgba(76,175,80,0.4);
-}
-
-/* ❤️ NO */
+/* NO */
 #noBtn{
-    background: linear-gradient(135deg, #ff4d4d, #ff6b81);
+    background: linear-gradient(135deg, #64b5f6, #42a5f5);
     color:white;
     position:absolute;
-    box-shadow: 0 6px 15px rgba(255,77,77,0.3);
+    box-shadow: 0 6px 15px rgba(30,136,229,0.25);
 }
 
-#noBtn:hover{
-    transform: scale(1.1);
-    box-shadow: 0 10px 20px rgba(255,77,77,0.4);
+/* OSO */
+#bear{
+    width:220px;
+    margin-bottom:10px;
 }
-
 </style>
 </head>
 
 <body>
 
+<!-- 💙 corazones esquina -->
+<div class="heart top-left">💙</div>
+<div class="heart top-right">💙</div>
+<div class="heart bottom-left">💙</div>
+<div class="heart bottom-right">💙</div>
+
 <div class="container">
 
-    <!-- 🔥 GIF ORIGINAL -->
-    <img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" width="200">
+    <!-- 🐻 OSO -->
+    <img id="bear" src="https://i.pinimg.com/736x/c2/4b/a8/c24ba8b2295c7bc9cabe96857f08a08c.jpg">
 
     <h1>¿Me aceptás una salida? 👉👈</h1>
 
@@ -88,7 +103,7 @@ const noBtn = document.getElementById("noBtn");
 
 let scale = 1;
 
-/* 😭 BOTÓN NO ESCAPISTA */
+/* NO ESCAPA */
 noBtn.addEventListener("mouseover", () => {
     const x = Math.random() * (window.innerWidth - 120);
     const y = Math.random() * (window.innerHeight - 60);
@@ -111,7 +126,7 @@ noBtn.addEventListener("click", () => {
     yesBtn.style.transform = `scale(${scale})`;
 });
 
-/* 💚 CLICK EN SÍ */
+/* 💙 SÍ */
 yesBtn.addEventListener("click", () => {
     document.body.innerHTML = `
         <div style="
@@ -120,19 +135,18 @@ yesBtn.addEventListener("click", () => {
             justify-content:center;
             align-items:center;
             flex-direction:column;
-            background:#ffe6f2;
+            background:#dff3ff;
             font-family:Arial;
             text-align:center;
             gap:20px;">
 
-            <!-- 🐱 GATITO CON FLORES -->
-            <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" width="220">
+            <img src="https://i.pinimg.com/736x/58/91/cb/5891cb1892a3b31b49223f5b082091b9.jpg" width="260">
 
-            <h1 style="color:#ff3d7f;font-size:3rem;">
-                jiji 💗
+            <h1 style="color:#1e88e5;font-size:3rem;">
+                jiji 💙
             </h1>
 
-            <p style="font-size:2rem;color:#333;">
+            <p style="font-size:2rem;color:#1e88e5;">
                 I ♡ you
             </p>
 
